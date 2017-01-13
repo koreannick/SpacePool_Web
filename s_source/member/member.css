@@ -1,0 +1,715 @@
+html{ }
+body {  }
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, input, textarea, p, blockquote, th, td, textfield, select, img{
+	margin:0;
+	padding:0;
+}
+
+body {color:#666;font-size:12px; font-family:'나눔고딕',NanumGothic,'돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif !important; }
+h1, h2, h3, h4, h5, h6 {font-weight:normal;	font-size:1em;}
+ol, ul, li, dd, dl, dt  {list-style:none;}
+fieldset, legend {border:0;	margin:0;padding:0;}
+img {border:0;vertical-align:top; max-width: 100%; height: auto;}
+label{cursor:pointer;}
+address, caption, em{font-weight:normal;font-style:normal;}
+
+/* common */
+legend, .blind {
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1px;
+	height: 1px;
+	font-size: 0;
+	line-height: 0;
+	white-space: nowrap;
+*text-indent:-999em
+}
+/* sprite */
+.sp_coms, .btn_wrap a, .rdo_bx .rdo, .comp_bx .btn_next, .sp_comm, .course_lst dd a, .ver_type .btn_area a, .res_viewtb a {
+	display: inline-block;
+	overflow: hidden;
+	width: auto;
+	height: 10px;
+	background: url(/s_source/images/member/sp_com_sub.png) no-repeat;
+	font-size: 0;
+	line-height: 999px;
+	text-align: center;
+	vertical-align: top
+}
+.sp_btn {
+	display: inline-block;
+	background: url(/s_source/images/member/sp_btn.gif) no-repeat
+}
+.sp_num {
+	display: inline-block;
+	overflow: hidden;
+	background: url(/s_source/images/member/sp_num.png) no-repeat;
+	line-height: 999px
+}
+.sp_ly, .inprdo .rdo {
+	background: url(/s_source/images/member/sp_layer.png) no-repeat
+}
+/* 회원가입 */
+.stxt {
+	margin-top: 5px;
+	font-size: 12px;
+	color: #333;
+	line-height: 20px
+}
+.join_lst {
+	width: 100%;
+	margin-top: 29px
+}
+.join_lst:after {
+	display: block;
+	clear: both;
+	content: ''
+}
+.join_lst li {
+	position: relative;
+	float: left;
+	width: 158px;
+	height: 88px;
+	margin-left: 31px;
+	border: 1px solid #e5e5e5;
+	background: #f3f3f3;
+	color: #6d6d6d;
+	font-size: 14px;
+	line-height: 88px;
+	text-align: center
+}
+.join_lst li:first-child {
+	margin-left: 0
+}
+.join_lst li:first-child .ico_arr {
+	background: none
+}
+.join_lst li.selected {
+	border-color: #0e519b;
+	background-color: #1059a8;
+	color: #fff
+}
+.join_lst li .ico_arr {
+	position: absolute;
+	top: 50%;
+	left: -24px;
+	width: 18px;
+	height: 27px;
+	margin-top: -14px;
+	background-position: 0 0
+}
+.art_cont {
+	margin-top: 25px
+}
+.in_stit {
+	font-size: 14px;
+	color: #333
+}
+.terms_area {
+	overflow-y: scroll;
+	height: 186px;
+	margin-top: 10px;
+	padding: 12px;
+	border: 3px solid #e6e6e6;
+	font-size: 12px;
+	line-height: 18px
+}
+.t_tit {
+	margin-top: 18px;
+	color: #115fad
+}
+.t_tit:first-child {
+	margin-top: 0
+}
+.t_txt {
+	color: #333
+}
+.t_chk {
+	margin-top: 10px;
+	font-size: 12px;
+	color: #333
+}
+.t_chk input {
+	margin: -1px 0 1px;
+	vertical-align: middle
+}
+.t_chk label {
+	margin-left: 5px
+}
+.art_tip {
+	margin-top: 26px;
+	font-size: 12px;
+	color: #333
+}
+.art_tip .ico_tip {
+	width: 16px;
+	height: 16px;
+	margin: -1px 5px 1px 0;
+	background-position: -22px 0;
+	vertical-align: middle
+}
+.btn_wrap {
+	position: relative;
+	min-height: 34px;
+	margin-top: 28px;
+	padding-top: 25px;
+	border-top: 3px solid #e6e6e6;
+	text-align: center
+}
+.btn_wrap a, .comp_bx .btn_next {
+	width: 94px;
+	height: 34px;
+	margin-left: 7px;
+	font-size: 13px;
+	line-height: 34px
+}
+.btn_wrap a:first-child, .comp_bx .btn_next {
+	margin-left: 0
+}
+.btn_wrap a:hover, .comp_bx .btn_next:hover {
+	text-decoration: none
+}
+.btn_wrap .btn_cancle {
+	background-position: 0 -171px;
+	color: #333
+}
+.btn_wrap .btn_cancle.btn_ar {
+	position: absolute;
+	bottom: 0;
+	right: 0
+}
+.btn_wrap .btn_next, .comp_bx .btn_next {
+	background-position: 0 -209px;
+	color: #fff
+}
+.btn_wrap.no_bor {
+	margin-top: 0;
+	border-top: 0
+}
+.main .btn_wrap {
+	min-height: 0;
+	margin: 0;
+	padding: 0;
+	border: 0
+}
+.cer_bx, .comp_bx {
+	margin-top: 10px;
+	padding: 17px;
+	border: 3px solid #e6e6e6;
+	text-align: center
+}
+.cer_bx .btn_area {
+	padding: 29px 0 45px
+}
+.cer_bx .btn_area .sp_ly {
+	display: inline-block;
+	width: 118px;
+	height: 34px;
+	margin-left: 18px;
+	background-position: -345px -60px;
+	line-height: 34px;
+	color: #323333;
+	text-indent: 28px
+}
+.cer_bx .btn_area .sp_ly:hover {
+	text-decoration: none
+}
+.cer_bx .btn_area .sp_ly:first-child {
+	margin-left: 0
+}
+.cer_bx .btn_area .sp_ly.bg_me {
+	background-position: -345px -136px
+}
+.cer_bx .in_txt {
+	padding: 12px 0 0 132px;
+	border-top: 1px solid #e6e6e6;
+	line-height: 20px;
+	text-align: left
+}
+.stit_bx {
+	width: 100%
+}
+.stit_bx:after {
+	display: block;
+	clear: both;
+	content: ''
+}
+.stit_bx .in_stit {
+	float: left
+}
+.stit_bx .tip {
+	float: left;
+	margin-left: 10px;
+	font-size: 12px;
+	color: #333;
+	line-height: 16px
+}
+.stit_bx .tip em, .user_lst .d_tit em {
+	color: #e60012
+}
+.user_lst {
+	margin-top: 19px;
+	padding-top: 16px;
+	border-top: 3px solid #e6e6e6
+}
+.user_lst li {
+	margin-top: 12px;
+	zoom: 1
+}
+.user_lst li:after {
+	display: block;
+	clear: both;
+	content: ''
+}
+.user_lst li:first-child {
+	margin-top: 0
+}
+.user_lst .d_tit {
+	float: left;
+	width: 106px;
+	top: 0;
+	left: 0;
+	font-size: 14px;
+	color: #666;
+	line-height: 28px
+}
+.user_lst .input_txt {
+	width: 193px;
+	height: 26px;
+	padding: 0 7px;
+	border: 1px solid #cccccf;
+	background: #f4f4f4;
+	line-height: 26px
+}
+.user_lst .input_txt.w23 {
+	width: 23px
+}
+.user_lst .input_txt.w41 {
+	width: 41px
+}
+.user_lst .input_txt.w416 {
+	width: 416px
+}
+.user_lst .sel_box li {
+	position: static;
+	width: auto;
+	margin-top: 0;
+	padding-left: 0
+}
+.info_bx:after {
+	display: block;
+	clear: both;
+	content: ''
+}
+.info_bx .in_txt {
+	display: inline-block;
+	margin-left: 14px;
+	color: #666;
+	line-height: 28px
+}
+.btn_chk {
+	height: 23px;
+	margin: 2px 0 -2px 6px;
+	padding-left: 10px;
+	background-position: 0 0;
+	text-align: center
+}
+.btn_chk:first-child {
+	margin-left: 0
+}
+.btn_chk .sp_btn {
+	height: 23px;
+	margin-right: -2px;
+	padding-right: 10px;
+	background-position: 100% 0;
+	font-size: 11px;
+	color: #353642;
+	line-height: 23px
+}
+.fl_inpbx {
+	float: left
+}
+.rdo_wrap {
+	display: inline-block;
+	min-width: 209px
+}
+.rdo_wrap label {
+	display: inline-block;
+	margin-right: 12px;
+	font-size: 13px;
+	color: #666;
+	line-height: 28px
+}
+.rdo_bx {
+	display: inline-block;
+	position: relative;
+	width: 18px;
+	height: 18px
+}
+.rdo_bx:first-child {
+	margin-left: 0
+}
+.rdo_bx input {
+	width: 16px;
+	height: 16px;
+	margin: 1px
+}
+.rdo_bx .rdo {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 18px;
+	height: 18px;
+	margin: -1px 0 1px;
+	background-position: -42px 0;
+	vertical-align: middle
+}
+.rdo_bx.chk .rdo {
+	background-position: -64px 0
+}
+.trow_inp {
+	margin: 7px 0 0 106px
+}
+.trow_inp:first-child {
+	margin: 0
+}
+.comp_bx {
+	position: relative;
+	padding: 36px 0 22px;
+	text-align: center
+}
+.comp_bx .ico_comp {
+	position: absolute;
+	top: 50%;
+	left: 64px;
+	width: 122px;
+	height: 93px;
+	margin-top: -46px;
+	background-position: 0 -51px
+}
+.comp_bx .in_tit {
+	font-size: 14px;
+	color: #333
+}
+.comp_bx .in_txt {
+	margin-top: 19px;
+	font-size: 12px;
+	line-height: 20px
+}
+.comp_bx .btn_next {
+	margin-top: 20px
+}
+.d_txt {
+	font-size: 13px;
+	color: #666;
+	line-height: 28px
+}
+/*로그인*/
+
+.ly_header {
+	overflow: hidden;
+	height: 54px;
+	border-bottom: 3px solid #115fad
+}
+.ly_header .sp_ly {
+	height: 18px;
+	margin: 17px 0 0 23px
+}
+.ly_header .tit_log {
+	width: 245px;
+	height: 39px;
+	margin: 20px 0 0 33px
+}
+.ly_header .tit_find {
+	width: 159px;
+	height: 19px;
+	margin: 34px 0 0 25px;
+	background-position: 0 -50px
+}
+.ly_header .tit_noti {
+	width: 32px;
+	background-position: -170px -50px
+}
+.ly_header .tit_logout {
+	width: 63px;
+	background-position: 0 -80px
+}
+.ly_header .tit_pwchange {
+	width: 100px;
+	background-position: -67px -80px
+}
+.ly_header .tit_confirm {
+	width: 32px;
+	background-position: -171px -80px
+}
+.ly_header .tit_address {
+	width: 101px;
+	background-position: 0 -102px
+}
+.ly_header .tit_reservation {
+	width: 65px;
+	background-position: -105px -102px
+}
+.ly_header .tit_myfriend {
+	width: 89px;
+	background-position: -91px -124px
+}
+.ly_header .tit_joinroom {
+	width: 65px;
+	background-position: 0 -156px
+}
+.ly_header .tit_joinlist {
+	width: 64px;
+	background-position: -69px -156px
+}
+.ly_header .tit_weather {
+	width: 65px;
+	margin: 39px 0 0 23px;
+	background-position: -161px -156px
+}
+.ly_header .tit_sitemap {
+	width: 70px;
+	background-position: 0 -178px
+}
+.ly_login .inner {
+	width: 694px;
+	height: 383px;
+	margin: 0 auto;
+	padding-bottom: 0
+}
+.ly_login .inner h2 {
+	font-weight: 600;
+}
+
+.ly_login .ly_bottom_l {
+	background-position: 0 -24px
+}
+.ly_login .ly_bottom_r {
+	background-position: -10px -24px
+}
+.ly_login .ly_bottom_m {
+	background-image: url(/img/layer_bottom2.png)
+}
+.ly_login .ly_header {
+	height: 90px
+}
+.ly_login .ly_header h1 {
+	font-size: 24px;
+	line-height: 90px
+}
+.ly_login .btn_close {
+	top: 28px;
+	right: 35px
+}
+.ly_login .btn_area {
+	margin-top: 20px
+}
+.ly_login .btn_area .sp_ly {
+	width: 118px;
+	height: 34px;
+	margin-left: 18px;
+	background-position: -345px -60px;
+	line-height: 34px;
+	color: #323333;
+	text-indent: 28px
+}
+.ly_login .btn_area .sp_ly:first-child {
+	margin-left: 0
+}
+.log_area {
+	position: relative;
+	height: 198px
+}
+.log_area .input_log {
+	width: 366px;
+	padding: 36px 0 0 106px
+}
+.log_area .input_log:after {
+	display: block;
+	cleat: both;
+	content: ''
+}
+.log_area .input_log dt {
+	float: left;
+	width: 67px;
+	height: 37px;
+	padding-top: 13px;
+	line-height: 37px
+}
+.log_area .input_log dt:first-child {
+*margin-top:0
+}
+.log_area .input_log label {
+	font-size: 14px;
+	color: #666
+}
+.log_area .input_log dd {
+	overflow: hidden;
+	padding-top: 13px
+}
+.log_area .input_log dd.find-email select {
+	float: right;
+}
+.log_area .input_log .input_txt {
+	width: 283px;
+	height: 35px;
+	padding: 0 7px;
+	border: 1px solid #cccccf;
+	background: #f4f4f4;
+	line-height: 35px
+}
+
+.log_area .find-id, .select-info {
+	padding: 0 0 0 106px
+}
+.log_area .find-id select {
+	height: 35px;
+	padding: 0 0 0 7px;
+	border: 1px solid #cccccf;
+	background: #f4f4f4;
+	line-height: 35px;
+}
+
+.log_area .u_set {
+	position: relative;
+	margin: 11px 0 0 173px;
+	padding-left: 18px
+}
+.log_area .u_set .input_chk {
+	position: absolute;
+	top: 1px;
+	left: 0
+}
+.log_area .u_set label {
+	color: #6f6f76
+}
+.log_area .btn_login, .log_area .btn_find {
+	position: absolute;
+	top: 12px;
+	right: 121px;
+	width: 90px;
+	height: 90px;
+	font-size: 0;
+	text-indent: -99999px;
+	border: 0;
+	background-position: -250px 0
+}
+.log_area .btn_login {
+	top: 46px;
+}
+.log_area .btn_find {
+	right: 61px;
+	background-position: -250px -100px
+}
+.log_info {
+	height: 90px;
+	background: #f3f3f3;
+	border: 2px solid #ececec
+}
+.log_info .lst_log {
+	padding: 13px 0 0 26px
+}
+.log_info .lst_log li {
+	margin-top: 3px;
+	padding-left: 6px;
+	background: url(/img/bu_dot.gif) no-repeat 0 6px;
+	line-height: 15px;
+	color: #333
+}
+.log_info .lst_log .sp_ly {
+	display: inline-block;
+	height: 23px;
+	margin: -3px 0 3px;
+	vertical-align: top
+}
+.log_info .lst_log .btn_find {
+	width: 115px;
+	margin-left: 8px;
+	background-position: -345px 0
+}
+.log_info .lst_log .btn_join {
+	width: 61px;
+	background-position: -345px -30px
+}
+.find .log_info {
+	height: 130px
+}
+.find .log_area .input_log {
+	padding: 13px 0 0 164px
+}
+.find .log_area .input_log dt {
+	height: 29px;
+	line-height: 29px
+}
+.find .log_area .input_log dd {
+	height: 29px
+}
+.find .log_area .input_log .input_txt {
+	width: 179px;
+	height: 26px;
+	line-height: 26px
+}
+.log_area .input_log .dat_srch {
+	overflow: visible
+}
+
+.result-box {
+	border-top: 1px solid #d8d8d8;
+	font-size: 16px;
+	text-align: center;
+	padding: 20px 0;
+	border-bottom: 1px solid #d8d8d8;
+}
+.result-box strong {color: #ee0000;}
+
+
+.auth .important-list {margin: 0 0 0 20px;}
+.auth .important-list li {margin-bottom: 20px;}
+.auth .important-list li strong {
+	display: block;
+	color: #d06200;
+}
+.auth .btn-auth {
+	padding: 45px 0 65px 0;
+	text-align: center;
+}
+
+/*회원탈퇴 new*/
+
+.member_wrap {width: 100%;
+font-family:'나눔고딕',NanumGothic,'돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif !important; color: #444
+}
+
+.member_title_01 {font-size: 22px; font-weight: 600; letter-spacing: -1px; padding: 10px 0 }
+.member_title_02 {font-size: 14px;}
+.member_title_wrap {padding-bottom: 20px;}
+
+.member_form_wrap {width: 100%; border-top: 3px solid #333}
+.member_form .title {width: 100%; border-bottom: 1px solid #d1d1d1; background-color: #f8f8f8; padding: 15px 0; text-align: center; font-size: 13px;}
+.member_form_in_wrap {padding: 100px 10% 20px;}
+.member_form_in {width: 100%; text-align: center; line-height: 28px; padding: 20px 0; border: 1px solid #ccc;}
+.member_form_in strong {font-size: 20px; font-weight: 600; color: #FF4700}
+.member_form_in_wrap {background-image: url(/s_source/images/member/sub8-content-img1.gif);
+background-repeat: no-repeat;background-position: center 10px;
+}
+
+.member_btn_wrap {text-align: center; padding: 20px 0 50px;}
+.member_btn_wrap button { border: none; background-color: transparent; background-image: none;
+box-shadow: none; outline: none; cursor: pointer;
+}
+
+/*비밀번호 변경 수정*/
+.view_info_box_02 {width: 100%;font-family:'나눔고딕', 'Nanum Gothic',NanumGothic, '돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif !important; letter-spacing: 0px;}
+.view_info_box_title {font-size: 16px; line-height: 28px; font-weight: 500;
+color: #333; padding:15px 10px;
+border-top: 2px solid #333; background-color: #f6f7fa
+}
+.view_info_box_wrap2 {padding: 10px; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd;}
+.view_info_box_100 {width: 100%; font-size: 12px; font-weight: normal; color: #666; line-height: 28px;}
+.view_info_box_wrap {width: 300px; margin: 0 auto; padding: 10px 0}
+.view_info_box_50 {width:100%;letter-spacing: -1px; color: #666; padding: 5px 0}
+.view_info_box_30 {padding: 10px; background-color: #437db7; color: #fff; font-size: 13px; font-weight: 500; text-align: center;border-radius: 100px; }
+.view_info_box_70 {padding:5px; background-color: #fff; }
+.view_info_box_70 > input {width: 90%; border: 1px solid #ddd; padding: 5px 3%; margin: 0 auto; display: block; }

@@ -1,0 +1,106 @@
+@charset "utf-8";
+/* CSS Document */
+#wrap {
+    width: 100%;
+    z-index: 9999;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    padding-top: 80px; min-width: 1160px;
+}
+
+body {width: 100%; }
+body, html {  }
+html {}
+img {max-width: 100%;}
+
+a {
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+/*메일*/
+
+.mail_wrap{background: #edefed;}
+.mail{}
+.mail_box{
+    background: #fff;
+    margin: 20px auto;
+    border-radius: 20px;
+    padding: 30px 20px;
+    width: 700px;
+}
+.mail_img{
+    text-align: center;
+}
+.mail_txt{
+    text-align: center;
+    font-size: 17px;
+    margin-top: 20px;
+}
+
+.mail_txt b{font-size: 20px;}
+
+.mail_btn{
+    display: block;
+    width: 200px;
+    height: 42px;
+    background: #0e86b7;
+    color: #fff;
+    line-height: 42px;
+    border-radius: 10px;
+    margin: 26px auto 0;
+    font-weight: 600;
+}
+
+
+.mail_tlt{
+    width: 100%;
+    text-align: center;
+    background-color: #0e86b7;
+    height: 73px;
+    padding-top: 14px;
+    position: fixed;
+    top: 0;
+}
+
+.mail_wrap .footer_top_wrap{display:none;}
+.mail_wrap .footer_bottom_link{display:none;}
+
+
+
+/*about 추가*/
+
+
+.about_btn_wrap:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.about_btn_wrap{
+	width: 100%;
+    max-width: 1160px;
+    padding: 15px 0;
+    margin: 0 auto;}
+.a_btn_box{width: 48%;
+    float: left;
+    padding: 0 1%;}
+.about_btn{
+    display: block;
+    width: 100%;
+    height: 73px;
+    line-height: 73px;
+    background-color: #f47b5f;
+    color: #fff;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 24px;
+    font-family: 'no400';
+    border-bottom: 8px solid #dc4c2b;
+    border-radius: 100px;
+    }
+.about_btn:hover{background-color: #ffd846}
