@@ -544,7 +544,7 @@ img {max-width: 100%;}
 
 
 .main_event_wrap .bx-wrapper .bx-controls-direction a {
-    margin-top: -21px; width: 18px; height: 43px;z-index: 2002;
+    margin-top: -21px; width: 36px; height: 86px;z-index: 2002;
 }
 .main_event_wrap .bx-wrapper .bx-prev {
     background-image:url(/images/common/event_arr_left.png);
@@ -823,7 +823,7 @@ height: 474px!important; background-color: #000
     right: 10px;
 }
 
-.sub_visual {margin: 0 auto; width: 1160px; position: relative;top: 0px; left: 0px; }
+.sub_visual {margin: 0 auto; width: 1160px; height: 550px;position: relative;top: 0px; left: 0px; }
 .sub_visual .pt_box_star {position: absolute;right: 5%; bottom: 10px;
     height: 30px; line-height: 30px;
 }

@@ -66,32 +66,6 @@ if($uid){
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
 <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
 <?}?>
-
-<style>
-        .black_overlay{
-            display: none;
-            position: fixed;
-            top: 0%;
-            left: 0%;
-            width: 100%;
-            height: 1500px;
-            background-color: black;
-            z-index:1001;
-            -moz-opacity: 0.8;
-            opacity:.80;
-            filter: alpha(opacity=80);
-        }
-        .white_content {
-            display: none;
-            position: fixed;;
-            top: 15%;
-            left: 25%;
-            width: 50%;
-            height: 50%;
-            padding: auto;
-        }
-    </style>
-
 </head>
 <body>
 	<!-- 올랩 -->
@@ -185,7 +159,7 @@ if($uid){
 							<div class="s_view_sns">
 								<?php virtual('/include/sns.php'); ?>
 							</div>
-							<div class="s_view_title">
+							<div class="s_view_title"style="background-color:rgba(150,150,150,0.5);">
 								<div class="s_view_title_txt">
 									<?=$subject?>
 								</div>
@@ -297,8 +271,8 @@ if($uid){
 												<tr>
 													<th align="left" valign="middle" scope="row">평수/실평수</th>
 													<td align="left" valign="middle"><?=$size1?>평/<?=$size2?>평</td>
-												</tr>
-												<tr>
+												<!-- </tr>
+												<tr> -->
 													<th align="left" valign="middle" scope="row">보증금</th>
 													<td align="left" valign="middle"><?=number_Format($e3_price)?>원</td>
 												</tr>
@@ -308,10 +282,10 @@ if($uid){
 												<tr>
 													<th align="left" valign="middle" scope="row">입주희망업종</th>
 													<td align="left" valign="middle"><?=$etc1?></td>
-												</tr>
+												<!-- </tr> -->
 												<?}?>
 												<?if($etc2){?>
-												<tr>
+												<!-- <tr> -->
 													<th align="left" valign="middle" scope="row">입주가능시기</th>
 													<td align="left" valign="middle"><?=$etc2?></td>
 												</tr>
@@ -323,7 +297,7 @@ if($uid){
 													<?}else{?>
 													<td align="left" valign="middle"><?=$OpenHour.":".$OpenTime?> ~ <?=$CloseHour.":0".$CloseTime?></td>
 													<?}?>
-												</tr>
+												<!-- </tr> -->
 												<?if($holiday){?>
 												<tr>
 													<th align="left" valign="middle" scope="row">휴무일</th>
@@ -331,7 +305,7 @@ if($uid){
 												</tr>
 												<?}?>
 												<?if($gubun==1){?>
-												<tr>
+												<!-- <tr> -->
 													<th align="left" valign="middle" scope="row">예약형태</th>
 													<td align="left" valign="middle">
 														<?if($g1_d=="Y"){?>
@@ -369,7 +343,7 @@ if($uid){
 															</div>
 														</div>
 													</td>
-												</tr>
+												<!-- </tr> -->
 												<?}elseif($gubun==3){?>
 												<?}elseif($gubun==4){?>
 												<tr>
@@ -394,12 +368,12 @@ if($uid){
 													</td>
 												</tr>
 												<?}?>
-												<tr>
+												<!-- <tr> -->
 													<th align="left" valign="middle" scope="row">이용기간</th>
 													<td align="left" valign="middle">
 														<input type="text" name="sDate" id="sDate" placeholder="년/월/일" value="<?=$etc2?>" class="sign_input_04" maxlength="10" required="required" readonly> ~ <span id="eDate"></span>
 													</td>
-												</tr>
+												<!-- </tr> -->
 												<?if($gubun!=1){?>
 												<!-- <tr>
 													<th align="left" valign="middle" scope="row">부가서비스</th>
@@ -421,7 +395,7 @@ if($uid){
 													</td>
 												</tr> -->
 												<?}?>
-												<tr>
+												<!-- <tr> -->
 													<th align="left" valign="middle" scope="row">인원</th>
 													<td align="left" valign="middle">
 														<div class="select_num_wrap">
@@ -434,6 +408,7 @@ if($uid){
 													</td>
 												</tr>
 												<?if($gubun==1){?>
+													<?if($e1_price){?>
 												<tr>
 													<th align="left" valign="middle" scope="row">관리비</th>
 													<td align="left" valign="middle">
@@ -443,9 +418,11 @@ if($uid){
 														</div>
 														<?}?>
 													</td>
-												</tr>
-												<tr>
+													<?}?>
+												<!-- </tr>
+												<tr> -->
 
+													<?if($e2_price){?>
 														<th align="left" valign="middle" scope="row">청소비</th>
 														<td align="left" valign="middle">
 														<?if($e2=="Y"){?>
@@ -456,9 +433,10 @@ if($uid){
 														</td>
 												</tr>
 												<?}?>
+												<?}?>
 												<tr>
 													<th align="left" valign="middle" scope="row">결제 금액</th>
-													<td align="left" valign="middle">
+													<td colspan="3" align="left" valign="middle" style="text-align: center;">
 														<div class="total_pay" id="total_price">
 															<?=number_format($price+$e1_price+$e2_price)?>원
 														</div>
@@ -726,7 +704,7 @@ if($uid){
                 <div class="s_view_info_box">
 
 
-								<div class="main_event_wrap" style="width: 75%; height: 550px">
+								<div class="main_event_wrap" style="width: 85%; height: 550px">
 									<div class="slider3">
 										<ul class="bxslider3">
 												<?if($bimg){?>

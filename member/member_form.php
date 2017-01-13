@@ -98,7 +98,7 @@
 			<span class="span_col"> - </span>
 			<input type="text" name="mobile3" class="sign_input_02"  placeholder="" maxlength="4" onkeypress="onlyNumber();" style="ime-mode:disabled;" must="Y" mval="휴대폰번호는" value="<?=$mobile3?>">
 		<?
-	 
+
 		if($PHP_SELF =='/member/host_signup.php'){
 		?>
 		<?}else{?>
@@ -124,7 +124,7 @@
 			<span class="span_desc">
 				<a href="#" class="sing_btn_01" onClick="execDaumPostcode(1);">우편번호 찾기</a>
 			</span>
-			<div id="Post_Layer" style="display:none;position:fixed;overflow:hidden;z-index:1;-webkit-overflow-scrolling:touch;">
+			<div id="Post_Layer" style="display:none;position:top;overflow:hidden;z-index:1;-webkit-overflow-scrolling:touch;">
 				<img src="//i1.daumcdn.net/localimg/localimages/07/postcode/320/close.png" id="btnCloseLayer" style="cursor:pointer;position:absolute;right:-3px;top:-3px;z-index:1" onclick="closeDaumPostcode()" alt="닫기 버튼">
 			</div>
 			<script type="text/javascript" src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
