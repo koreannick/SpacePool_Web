@@ -435,13 +435,15 @@ if($uid){
 												<?}?>
 												<?}?>
 												<tr>
-													<th align="left" valign="middle" scope="row">결제 금액</th>
-													<td colspan="3" align="left" valign="middle" style="text-align: center;">
-														<div class="total_pay" id="total_price">
-															<?=number_format($price+$e1_price+$e2_price)?>원
-														</div>
-													</td>
+													<th colspan="4" align="left" valign="middle" scope="row">결제 금액</th>
 												</tr>
+												<tr>
+												<td colspan="4" align="left" valign="middle" style="text-align: center;">
+													<div class="total_pay" id="total_price">
+														<?=number_format($price+$e1_price+$e2_price)?>원
+													</div>
+												</td>
+											</tr>
 											</table>
 										</div>
 										<div class="s_view_btn_all_wrap" id="non_btn">
