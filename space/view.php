@@ -810,7 +810,6 @@ if($uid){
 												}?>
 											</ul>
 										</div>
-
 										<script type="text/javascript">
 											$(document).ready(function(){
 												var slider3 = $('.bxslider3').bxSlider({
@@ -821,15 +820,13 @@ if($uid){
 												});
 											});
 										</script>
-										<br>
-										<br>
 										</div>
-
-
 								<div class="s_view_nav_point">
 									<div id="s_view_nav_map"></div>
 								</div>
 								<div class="s_view_nav">
+									<br>
+									<br>
 									<a href="#s_view_nav_info" class="go_ani">정보</a>
                   <a href="#s_view_space_img" class = "go_ani">공간사진</a>
 									<a href="#s_view_nav_map" class="go_ani active">지도</a>
