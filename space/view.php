@@ -266,48 +266,94 @@ if($uid){
 								<div class="s_view_info_box">
 									<div class="s_view_info_box_100">
 										<div class="table_01">
-											<table width="100%" border="0" cellspacing="0" cellpadding="0">
-												<?if($gubun!=4){?>
-												<tr>
-													<th align="left" valign="middle" scope="row">평수/실평수</th>
-													<td align="left" valign="middle"><?=$size1?>평/<?=$size2?>평</td>
-												<!-- </tr>
-												<tr> -->
-													<th align="left" valign="middle" scope="row">보증금</th>
-													<td align="left" valign="middle"><?=number_Format($e3_price)?>원</td>
-												</tr>
-												<?}?>
+											  <table width="90%" border="0" cellspacing="0" cellpadding="0" align="center">
+													<?if($gubun==1){?>
+														<tr>
+												      <th align="center" valign="middle" scope="row">평수/실평수</th>
+												      <td align="center" valign="middle"><?=$size1?>평/<?=$size2?>평</td>
 
-												<?if($etc1){?>
-												<tr>
-													<th align="left" valign="middle" scope="row">입주희망업종</th>
-													<td align="left" valign="middle"><?=$etc1?></td>
-												<!-- </tr> -->
-												<?}?>
-												<?if($etc2){?>
-												<!-- <tr> -->
-													<th align="left" valign="middle" scope="row">입주가능시기</th>
-													<td align="left" valign="middle"><?=$etc2?></td>
-												</tr>
-												<?}?>
-												<tr>
-													<th align="left" valign="middle" scope="row">운영시간</th>
-													<?if($OpenHout<10){?>
-													<td align="left" valign="middle"><?=$OpenHour.":0".$OpenTime?> ~ <?=$CloseHour.":0".$CloseTime?></td>
-													<?}else{?>
-													<td align="left" valign="middle"><?=$OpenHour.":".$OpenTime?> ~ <?=$CloseHour.":0".$CloseTime?></td>
-													<?}?>
-												<!-- </tr> -->
-												<?if($holiday){?>
-												<tr>
-													<th align="left" valign="middle" scope="row">휴무일</th>
-													<td align="left" valign="middle"><?=$holiday?></td>
-												</tr>
-												<?}?>
-												<?if($gubun==1){?>
-												<!-- <tr> -->
-													<th align="left" valign="middle" scope="row">예약형태</th>
-													<td align="left" valign="middle">
+															<th align="center" valign="middle" scope="row">보증금</th>
+												      <td align="center" valign="middle"><?=number_Format($e3_price)?>원</td>
+														</tr>
+
+														<tr>
+												      <th align="center" valign="middle" scope="row">입주희망업종</th>
+												    <?if($etc1){?>
+												      <td align="center" valign="middle"><?=$etc1?></td>
+												    <?}else{?>
+												      <td align="center" valign="middle">무관</td>
+														<?}?>
+
+												      <th align="center" valign="middle" scope="row">입주가능시기</th>
+												    <?if($etc2){?>
+												      <td align="center" valign="middle"><?=$etc2?></td>
+														<?}else{?>
+															<td align="center" valign="middle">무관</td>
+														<?}?>
+													</tr>
+
+												    <tr>
+												      <th align="center" valign="middle" scope="row">운영시간</th>
+												      <?if($OpenHour<10 && $CloseHour<10){?>
+															<td align="center" valign="middle">0<?=$OpenHour.":0".$OpenTime?> ~ 0<?=$CloseHour.":0".$CloseTime?></td>
+												      <?}elseif($OpenHour<10){?>
+												      <td align="center" valign="middle">0<?=$OpenHour.":0".$OpenTime?> ~ <?=$CloseHour.":0".$CloseTime?></td>
+												      <?}elseif($CloseHour<10){?>
+																<td align="center" valign="middle"><?=$OpenHour.":0".$OpenTime?> ~ 0<?=$CloseHour.":0".$CloseTime?></td>
+															<?}else{?>
+																<td align="center" valign="middle"><?=$OpenHour.":0".$OpenTime?> ~ <?=$CloseHour.":0".$CloseTime?></td>
+															<?}?>
+																<th align="center" valign="middle" scope="row">휴무일</th>
+															<?if($holiday){?>
+																<td align="center" valign="middle"><?=$holiday?></td>
+														  <?}else{?>
+																<td align="center" valign="middle">없음</td>
+															<?}?>
+														</tr>
+														<tr>
+
+															<th align="center" valign="middle" scope="row">이용기간</th>
+															<td align="center" valign="middle">
+																<input type="text" name="sDate" id="sDate" placeholder="년/월/일" value="<?=$etc2?>" class="sign_input_04" maxlength="10" required="required" readonly> ~ <span id="eDate"></span>
+															</td>
+
+												      <th align="center" valign="middle" scope="row">인원</th>
+												      <td align="center" valign="middle">
+												        <div class="select_num_wrap">
+												          <div class="select_num">
+												            <input type="text" name="person" id="person" readonly="" value="1" maxlength="3" required="required">
+												          </div>
+												          <a href="javascript:void(0)" class="select_num_minus">-</a>
+												          <a href="javascript:void(0)" class="select_num_plus">+</a>
+												        </div>
+												      </td>
+												    </tr>
+
+													<tr>
+														<th align="center" valign="middle" scope="row">관리비</th>
+														<td align="center" valign="middle">
+															<?if($e1=="Y"){?>
+															<div class="plus_pay">
+																+<?=number_Format($e1_price)?>원 (관리비/월)
+															</div>
+															<?}else{?>
+																관리비 없음
+															<?}?>
+														</td>
+															<th align="center" valign="middle" scope="row">청소비</th>
+															<td align="center" valign="middle">
+															<?if($e2=="Y"){?>
+															<div class="plus_pay">
+																+<?=number_Format($e2_price)?>원 (청소비/월)
+															</div>
+															<?}else{?>
+																청소비 없음
+															<?}?>
+															</td>
+													</tr>
+													<tr>
+														<th align="center" valign="middle" scope="row">예약형태</th>
+														<td colspan="3" align="center" valign="middle">
 														<?if($g1_d=="Y"){?>
 														<div class="pay_type_wrap">
 															<div class="pay_type">
@@ -328,76 +374,71 @@ if($uid){
 															</div>
 														</div>
 														<?}?>
-													</td>
-												</tr>
+														</td>
+
+													</tr>
+													<tr>
+											      <th colspan="4" align="center" valign="middle" scope="row">결제 금액</th>
+											    </tr>
+											    <tr>
+											    <td colspan="4" align="center" valign="middle" style="text-align: center;">
+											      <div class="total_pay" id="total_price">
+											        <?=number_format($price+$e1_price+$e2_price)?>원
+											      </div>
+											    </td>
+											  </tr>
 												<?}elseif($gubun==2){?>
 												<tr>
-													<th align="left" valign="middle" scope="row">예약형태</th>
-													<td align="left" valign="middle">
-														<div class="pay_type_wrap">
-															<div class="pay_type">
-																<input type="radio" name="btype" id="sp_type2" value="<?=$g2?>" price="<?=$g2_price?>" checked title="<?=$gName_str?>">
-																<label for="sp_type2" class="radio_on">
-																	<?=$gName_str?> - <?=number_format($price)?>원/<?if($g2_p=="M")		echo "월";	else	echo "일";?>
-																</label>
-															</div>
-														</div>
-													</td>
-												<!-- </tr> -->
-												<?}elseif($gubun==3){?>
-												<?}elseif($gubun==4){?>
-												<tr>
-													<th align="left" valign="middle" scope="row">예약형태</th>
-													<td align="left" valign="middle">
-														<div class="pay_type_wrap">
-															<div class="pay_type">
-																<input type="radio" name="btype" id="sp_type3" value="SM" checked price="<?=$g4_price?>" title="세미나/미팅룸">
-																<label for="sp_type3" class="radio_on">
-																	<?=number_Format($g4_price)?>원/시간
-																</label>
-															</div>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<th align="left" valign="middle" scope="row">예약시간</th>
-													<td align="left" valign="middle">
-														<div id="time_bar">
+													<th align="center" valign="middle" scope="row">평수/실평수</th>
+													<td align="center" valign="middle"><?=$size1?>평/<?=$size2?>평</td>
 
-														</div>
-													</td>
+													<th align="center" valign="middle" scope="row">보증금</th>
+													<td align="center" valign="middle"><?=number_Format($e3_price)?>원</td>
 												</tr>
+
+												<tr>
+													<th align="center" valign="middle" scope="row">입주희망업종</th>
+												<?if($etc1){?>
+													<td align="center" valign="middle"><?=$etc1?></td>
+												<?}else{?>
+													<td align="center" valign="middle">무관</td>
 												<?}?>
-												<!-- <tr> -->
-													<th align="left" valign="middle" scope="row">이용기간</th>
-													<td align="left" valign="middle">
+
+													<th align="center" valign="middle" scope="row">입주가능시기</th>
+												<?if($etc2){?>
+													<td align="center" valign="middle"><?=$etc2?></td>
+												<?}else{?>
+													<td align="center" valign="middle">무관</td>
+												<?}?>
+											</tr>
+
+												<tr>
+													<th align="center" valign="middle" scope="row">운영시간</th>
+													<?if($OpenHour<10 && $CloseHour<10){?>
+													<td align="center" valign="middle">0<?=$OpenHour.":0".$OpenTime?> ~ 0<?=$CloseHour.":0".$CloseTime?></td>
+													<?}elseif($OpenHour<10){?>
+													<td align="center" valign="middle">0<?=$OpenHour.":0".$OpenTime?> ~ <?=$CloseHour.":0".$CloseTime?></td>
+													<?}elseif($CloseHour<10){?>
+														<td align="center" valign="middle"><?=$OpenHour.":0".$OpenTime?> ~ 0<?=$CloseHour.":0".$CloseTime?></td>
+													<?}else{?>
+														<td align="center" valign="middle"><?=$OpenHour.":0".$OpenTime?> ~ <?=$CloseHour.":0".$CloseTime?></td>
+													<?}?>
+														<th align="center" valign="middle" scope="row">휴무일</th>
+													<?if($holiday){?>
+														<td align="center" valign="middle"><?=$holiday?></td>
+													<?}else{?>
+														<td align="center" valign="middle">없음</td>
+													<?}?>
+												</tr>
+												<tr>
+
+													<th align="center" valign="middle" scope="row">이용기간</th>
+													<td align="center" valign="middle">
 														<input type="text" name="sDate" id="sDate" placeholder="년/월/일" value="<?=$etc2?>" class="sign_input_04" maxlength="10" required="required" readonly> ~ <span id="eDate"></span>
 													</td>
-												<!-- </tr> -->
-												<?if($gubun!=1){?>
-												<!-- <tr>
-													<th align="left" valign="middle" scope="row">부가서비스</th>
-													<td align="left" valign="middle">
-														<?
-														for($i=1;$i<=3;$i++){
-															if(${"s_".$i}){
-														?>
-														<div class="agree_label_in">
-															<input type="checkbox" name="sc_<?=$i?>" id="sc_<?=$i?>" value="Y" price="<?=${"s_".$i."_price"}?>" title="sc_<?=$i?>">
-																<label for="sc_<?=$i?>">
-																	<?=${"s_".$i}?> (<?=number_format(${"s_".$i."_price"})?>원)
-																</label>
-														</div>
-														<?
-															}
-														}
-														?>
-													</td>
-												</tr> -->
-												<?}?>
-												<!-- <tr> -->
-													<th align="left" valign="middle" scope="row">인원</th>
-													<td align="left" valign="middle">
+
+													<th align="center" valign="middle" scope="row">인원</th>
+													<td align="center" valign="middle">
 														<div class="select_num_wrap">
 															<div class="select_num">
 																<input type="text" name="person" id="person" readonly="" value="1" maxlength="3" required="required">
@@ -407,44 +448,88 @@ if($uid){
 														</div>
 													</td>
 												</tr>
-												<?if($gubun==1){?>
-													<?if($e1_price){?>
-												<tr>
-													<th align="left" valign="middle" scope="row">관리비</th>
-													<td align="left" valign="middle">
-														<?if($e1=="Y"){?>
-														<div class="plus_pay">
-															+<?=number_Format($e1_price)?>원 (관리비/월)
-														</div>
-														<?}?>
-													</td>
-													<?}?>
-												<!-- </tr>
-												<tr> -->
 
-													<?if($e2_price){?>
-														<th align="left" valign="middle" scope="row">청소비</th>
-														<td align="left" valign="middle">
-														<?if($e2=="Y"){?>
-														<div class="plus_pay">
-															+<?=number_Format($e2_price)?>원 (청소비/월)
+											<tr>
+												<th align="center" valign="middle" scope="row">예약형태</th>
+												<td colspan="3" align="center" valign="middle">
+													<div class="pay_type_wrap">
+														<div class="pay_type">
+															<input type="radio" name="btype" id="sp_type2" value="<?=$g2?>" price="<?=$g2_price?>" checked title="<?=$gName_str?>">
+															<label for="sp_type2" class="radio_on">
+																<?=$gName_str?> - <?=number_format($price)?>원/<?if($g2_p=="M")		echo "월";	else	echo "일";?>
+															</label>
 														</div>
-														<?}?>
-														</td>
-												</tr>
-												<?}?>
-												<?}?>
-												<tr>
-													<th colspan="4" align="left" valign="middle" scope="row">결제 금액</th>
-												</tr>
-												<tr>
-												<td colspan="4" align="left" valign="middle" style="text-align: center;">
-													<div class="total_pay" id="total_price">
-														<?=number_format($price+$e1_price+$e2_price)?>원
 													</div>
 												</td>
+
 											</tr>
-											</table>
+											<tr>
+												<th colspan="4" align="center" valign="middle" scope="row">결제 금액</th>
+											</tr>
+											<tr>
+											<td colspan="4" align="center" valign="middle" style="text-align: center;">
+												<div class="total_pay" id="total_price">
+													<?=number_format($price+$e1_price+$e2_price)?>원
+												</div>
+											</td>
+										</tr>
+												<?}elseif($gubun==4){?>
+
+								    <tr>
+								      <th align="center" valign="middle" scope="row">운영시간</th>
+								      <?if($OpenHour<10){?>
+								      <td align="center" valign="middle"><?=$minHour.":0".$OpenTime?> ~ <?=$maxHour.":0".$CloseTime?></td>
+								      <?}else{?>
+								      <td align="center" valign="middle"><?=$minHour.":".$OpenTime?> ~ <?=$maxHour.":0".$CloseTime?></td>
+								      <?}?>
+												<th align="center" valign="middle" scope="row">휴무일</th>
+											<?if($holiday){?>
+												<td align="center" valign="middle"><?=$holiday?></td>
+										  <?}else{?>
+												<td align="center" valign="middle">없음</td>
+											<?}?>
+										</tr>
+
+										<tr>
+											<th align="center" valign="middle" scope="row">예약형태</th>
+											<td colspan="3" align="center" valign="middle">
+												<div class="pay_type_wrap">
+													<div class="pay_type">
+														<input type="radio" name="btype" id="sp_type3" value="SM" checked price="<?=$g4_price?>" title="세미나/미팅룸">
+														<label for="sp_type3" class="radio_on">
+															<?=number_Format($g4_price)?>원/시간
+														</label>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th colspan="4" align="center" valign="middle" scope="row">예약시간</th>
+										</tr>
+										<tr>
+											<td colspan="4" align="center" valign="middle">
+												<div id="time_bar">
+												</div>
+											</td>
+										</tr>
+										<tr>
+								      <th colspan="4" align="center" valign="middle" scope="row">결제 금액</th>
+								    </tr>
+								    <tr>
+								    <td colspan="4" align="center" valign="middle" style="text-align: center;">
+								      <div class="total_pay" id="total_price">
+								        <?=number_format($price+$e1_price+$e2_price)?>원
+								      </div>
+								    </td>
+								  </tr>
+												<?}?>
+												</table>
+										</div>
+
+
+										</div>
+										<div width="80%" align="center">
+											● 보증금 및 주차비는 카드결재시 금액에 포함되지 않습니다.
 										</div>
 										<div class="s_view_btn_all_wrap" id="non_btn">
 											<div class="s_view_btn_wrap">

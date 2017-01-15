@@ -40,8 +40,11 @@
 				</div>
 			</div>
 			<div class="footer_top_right">
-				<a href="#">
-					<img src="/images/temp/qr_store.png">
+				<a href="http://blog.naver.com/spacepool">
+					<img style="width:100px;"src="/images/temp/blog2.png">
+				</a>
+				<a href="https://www.facebook.com/spacepoolofficial/">
+					<img style="width:100px;"src="/images/temp/fb.png">
 				</a>
 			</div>
 		</div>
