@@ -75,9 +75,11 @@ if($uid){
 
 		//수정시 임시테이블로 데이터 복사
 		if($bimg){
-			$result2 = mysql_query("select uid from es_img_tmp where id='$org_id' and file1='$bimg' and gubun='b' and sid='$_SESSION[SN_GUEST_ID]'");
+			// $result2 = mysql_query("select uid from es_img_tmp where id='$org_id' and file1='$bimg' and gubun='b' and sid='$_SESSION[SN_GUEST_ID]'");
+			$result2 = mysql_query("select uid from es_img_tmp where file1='$bimg' and gubun='b' and sid='$_SESSION[SN_GUEST_ID]'");
 			if($result2&&mysql_num_rows($result2)==0){
-				$result3 = mysql_query("insert into es_img_tmp (puid,id,file1,ip,wdate,gubun,sid) values ('$uid','$org_id','$bimg','$REMOTE_ADDR',".time().",'b','$_SESSION[SN_GUEST_ID]')");
+				// $result3 = mysql_query("insert into es_img_tmp (puid,id,file1,ip,wdate,gubun,sid) values ('$uid','$org_id','$bimg','$REMOTE_ADDR',".time().",'b','$_SESSION[SN_GUEST_ID]')");
+				$result3 = mysql_query("insert into es_img_tmp (puid,file1,ip,wdate,gubun,sid) values ('$uid','$bimg','$REMOTE_ADDR',".time().",'b','$_SESSION[SN_GUEST_ID]')");
 				if($result3){
 					if(file_exists($save_path.$bimg))					copy($save_path.$bimg,$save_path_tmp.$bimg);
 					if(file_exists($save_path."thum/".$bimg))		copy($save_path."thum/".$bimg,$save_path_tmp."thum/".$bimg);
@@ -89,7 +91,7 @@ if($uid){
 
 		for($i=1;$i<=6;$i++){
 			if(${"img".$i}){
-				$result2 = mysql_query("select uid from es_img_tmp where id='$org_id' and file1='".${"img".$i}."' and gubun='s' and sid='$_SESSION[SN_GUEST_ID]'");
+				$result2 = mysql_query("select uid from es_img_tmp where file1='".${"img".$i}."' and gubun='s' and sid='$_SESSION[SN_GUEST_ID]'");
 				if($result2&&mysql_num_rows($result2)==0){
 					$result3 = mysql_query("insert into es_img_tmp (puid,id,file1,ip,wdate,gubun,sid,num) values ('$uid','$org_id','".${"img".$i}."','$REMOTE_ADDR',".time().",'s','$_SESSION[SN_GUEST_ID]','$i')");
 					if($result3){
@@ -207,7 +209,7 @@ if($uid){
 						<div class="page_label_wrap">
 							<div class="page_label">
 								<!--uid가 있으면 수정 없으면 등록  -->
-							공간<?=$uid?><?if($uid)		echo "수정";		else		echo "등록";?></div>
+							공간<?if($uid)		echo "수정";		else		echo "등록";?></div>
 						</div>
 						<div class="m_top_nav_wrap">
 							<a href="javascript:void(0)" class="">1. 공간타입</a>

@@ -57,8 +57,9 @@ if($uid){
 								</div>
 								<div class="space_box_input">
 									<div class="space_input">
-										<input type="text" name="subject" maxlength="50" value="<?=$subject?>" style="ime-mode:active;" must="Y" mval="공간명은">
+										<input type="text" name="subject" maxlength="20" value="<?=$subject?>" style="ime-mode:active;" must="Y" mval="공간명은">
 									</div>
+									<span>공간명은 20자로 제한됩니다.</span>
 								</div>
 							</div>
 							<div class="space_box">

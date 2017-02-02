@@ -36,6 +36,9 @@ require "popup_layer.php";
 								</a>
 							</li>
 						</ul>
+						<div class="main_search_wrap">
+							<?require "include/search2.php";?>
+						</div>
 					</div>
 					<script type="text/javascript">
 						$(document).ready(function(){
@@ -63,9 +66,6 @@ require "popup_layer.php";
 							});
 						});
 					</script>
-				</div>
-				<div class="main_search_wrap">
-					<?require "include/search2.php";?>
 				</div>
 			</div>
 			<div class="con_wrap">

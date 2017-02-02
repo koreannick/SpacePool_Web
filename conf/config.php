@@ -62,7 +62,7 @@ $sms_cid = "spacepool";
 $sms_cpass = "spacepool@1212";
 
 
-$p_opt_arr = array(1=>"인터넷","와이파이","전화선","냉장고","정수기","프린터/복합기","회의실","접대실","주차장","음향시설","프로젝터","화장실","파티션","자판기","출입시스템","사업자등록");
+$p_opt_arr = array(1=>"인터넷","와이파이","전화선","냉장고","정수기","프린터/복합기","회의실","접대실","주차장","음향시설","프로젝터","화장실","파티션","자판기","출입시스템","사업자등록","CCTV");
 
 $day_str = array("일","월","화","수","목","금","토");
 
@@ -84,12 +84,12 @@ $db_host				= "localhost";		// Database 호스트명
 	$db_connect_passwd 		= "wecon03290";	 		// Db 계정 암호
 	$db_name				= "lucaspark90";	// Db Name
 
-	$tb_name				= "";				// 테이블 이름	
+	$tb_name				= "";				// 테이블 이름
 	$adminmail				= "";// 관리자 이메일
 	$admin_passwd			= "";
-	
+
 	$db_con=mysql_connect($db_host,$db_connect_id,$db_connect_passwd) or die(dberror());
-	
+
 	// 디비 연결 함수
 	function dbconnect()
 	{
@@ -101,7 +101,7 @@ $db_host				= "localhost";		// Database 호스트명
 		mysql_connect($db_host,$db_connect_id,$db_connect_passwd) or die(dberror());
 		mysql_select_db($db_name) or die(dberror());
 	}
-	
+
 	// 디비 연결 함수
 	function db_connect($db)
 	{
@@ -112,8 +112,8 @@ $db_host				= "localhost";		// Database 호스트명
 		mysql_connect($db_host,$db_connect_id,$db_connect_passwd) or die(dberror());
 		mysql_select_db($db) or die(dberror());
 	}
-	
-	
+
+
 	// 디비 에러시 출력 함수
 	function dberror()
 	{
@@ -130,12 +130,12 @@ $db_host				= "localhost";		// Database 호스트명
 			</Html>
 		");exit;
 	}
-	
+
 	function dberrormsg()
 	{
 		echo "MySQL ERROR: " . mysql_errno() . " " . mysql_error()."<BR>";
 		mysql_close();
-		exit; 
+		exit;
 	}
 
 	dbconnect();
