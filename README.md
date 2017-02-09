@@ -1,4 +1,4 @@
-# [SpacePool_Web](http://www.spacepool/)
+# [SpacePool_Web](http://www.spacepool.co.kr/)
 
 SpacePool의 웹페이지 전체 소스코드입니다.
 
